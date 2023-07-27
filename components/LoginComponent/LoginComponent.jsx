@@ -41,7 +41,7 @@ const LoginComponent = () => {
     const loginHandler = async () => {
         console.log("inside the login  handler", email, password)
         const value = { email, password }
-        const response = await fetch("http://localhost:4000/user/login", {
+        const response = await fetch("https://novbahaar-backend.onrender.com/user/login", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",

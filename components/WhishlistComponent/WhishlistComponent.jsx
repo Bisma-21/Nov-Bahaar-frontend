@@ -27,7 +27,7 @@ const WhishlistComponent = () => {
     const removeProductHandler = async (id) => {
         console.log("removeProductHandler==", id)
         try {
-            const response = await fetch("http://localhost:4000/whishlist/remove-product", {
+            const response = await fetch("https://novbahaar-backend.onrender.com/whishlist/remove-product", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",
@@ -48,7 +48,7 @@ const WhishlistComponent = () => {
     const addProductHandler = async (id) => {
         console.log("addProductHandler==", id)
         try {
-            const response = await fetch("http://localhost:4000/cart/to-add", {
+            const response = await fetch("https://novbahaar-backend.onrender.com/cart/to-add", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",

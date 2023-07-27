@@ -16,7 +16,7 @@ function App({ Component, pageProps }) {
   useEffect(() => {
     const fun = async () => {
       if (getToken() != null) {
-        const response = await fetch("http://localhost:4000/user/auto-login", {
+        const response = await fetch("https://novbahaar-backend.onrender.com/user/auto-login", {
           method: "GET",
           headers: {
             "Content-type": "application/json",

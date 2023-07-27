@@ -103,7 +103,7 @@ const OrderComponent = (props) => {
     const createOrderHandler = async () => {
         console.log("createOrderHandler=====>"
             , name, address, pin, seletedCountry, selectedUpi, totalPrice, productIds)
-        const response = await fetch("http://localhost:4000/order/create", {
+        const response = await fetch("https://novbahaar-backend.onrender.com/order/create", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",

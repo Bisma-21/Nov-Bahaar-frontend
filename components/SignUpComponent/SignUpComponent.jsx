@@ -50,7 +50,7 @@ const SignUpComponent = () => {
         setLoad(true)
         console.log("inside the login  handler", email, password, name)
         const value = { email, password, name }
-        const response = await fetch("http://localhost:4000/user/signup", {
+        const response = await fetch("https://novbahaar-backend.onrender.com/user/signup", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"

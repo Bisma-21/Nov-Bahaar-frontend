@@ -59,7 +59,7 @@ const ProductDetailComponent = (props) => {
     useEffect(() => {
         if (router.isReady) {
             const fun = async () => {
-                const response = await fetch(`http://localhost:4000/product/` + productId, {
+                const response = await fetch(`https://novbahaar-backend.onrender.com/product/` + productId, {
                     method: "GET",
                     headers: {
                         "Content-type": "application/json"
@@ -74,7 +74,7 @@ const ProductDetailComponent = (props) => {
     }, [productId])
     useEffect(() => {
         const fun = async () => {
-            const response = await fetch(`http://localhost:4000/review/` + productId, {
+            const response = await fetch(`https://novbahaar-backend.onrender.com/review/` + productId, {
                 method: "GET",
                 headers: {
                     "Content-type": "application/json"
@@ -93,7 +93,7 @@ const ProductDetailComponent = (props) => {
             if (!Object.keys(users).length) {
                 return router.push("/login")
             }
-            const response = await fetch("http://localhost:4000/cart/to-add", {
+            const response = await fetch("https://novbahaar-backend.onrender.com/cart/to-add", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",
@@ -120,7 +120,7 @@ const ProductDetailComponent = (props) => {
             if (!Object.keys(users).length) {
                 return router.push("/login")
             }
-            const response = await fetch("http://localhost:4000/whishlist/add-product", {
+            const response = await fetch("https://novbahaar-backend.onrender.com/whishlist/add-product", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",
@@ -142,7 +142,7 @@ const ProductDetailComponent = (props) => {
     const removeProductHandler = async (id) => {
         // console.log("remove ProductHandler=====>", id)
         try {
-            const response = await fetch("http://localhost:4000/whishlist/remove-product", {
+            const response = await fetch("https://novbahaar-backend.onrender.com/whishlist/remove-product", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",
@@ -200,7 +200,7 @@ const ProductDetailComponent = (props) => {
     };
     const submitMyReview = async () => {
         // console.log("submitMyReview===", input, selectedRating)
-        // fetch(`http://localhost:4000/review/create/` + productId, {
+        // fetch(`https://novbahaar-backend.onrender.com/review/create/` + productId, {
         //     method: "POST",
         //     headers: {
         //         "x-access-token": getToken(),
@@ -215,7 +215,7 @@ const ProductDetailComponent = (props) => {
         // toast.success("Comment Added Successfully!.")
         // setInput("")
         // setSelectedRating(0)
-        const response = await fetch(`http://localhost:4000/review/create/` + productId, {
+        const response = await fetch(`https://novbahaar-backend.onrender.com/review/create/` + productId, {
             method: "POST",
             headers: {
                 "x-access-token": getToken(),

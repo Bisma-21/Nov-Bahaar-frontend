@@ -18,7 +18,7 @@ const HomeComponent = () => {
     // const[storeId, set]
     useEffect(() => {
         const fun = async () => {
-            const response = await fetch("http://localhost:4000/product/all", {
+            const response = await fetch("https://novbahaar-backend.onrender.com/product/all", {
                 method: "GET",
                 headers: {
                     "Content-type": "application/json"

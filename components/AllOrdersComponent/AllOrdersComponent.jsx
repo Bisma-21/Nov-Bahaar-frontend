@@ -18,7 +18,7 @@ const AllOrders = () => {
     console.log("7777777777777", allOrders)
     const orderCount = useSelector((state) => state.order.orderCount)
     useEffect(() => {
-        fetch(`http://localhost:4000/order/all?status=active`, {
+        fetch(`https://novbahaar-backend.onrender.com/order/all?status=active`, {
             method: "GET",
             headers: {
                 "Content-type": "application/json",

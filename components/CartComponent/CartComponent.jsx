@@ -55,7 +55,7 @@ const CartComponent = () => {
         // console.log("inside the my cart use efffect")
         const fun = async () => {
             setLoading(true)
-            const response = await fetch("http://localhost:4000/cart/my", {
+            const response = await fetch("https://novbahaar-backend.onrender.com/cart/my", {
                 method: "GET",
                 headers: {
                     "Content-type": "application/json",
@@ -74,7 +74,7 @@ const CartComponent = () => {
         // setCount(data)
 
         // console.log("minus Handler", q, id)
-        const response = await fetch("http://localhost:4000/cart/decrease-quantity", {
+        const response = await fetch("https://novbahaar-backend.onrender.com/cart/decrease-quantity", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -93,7 +93,7 @@ const CartComponent = () => {
         const data = count + 1
         setCount(data)
         // console.log("plus Handler", data, id)
-        const response = await fetch("http://localhost:4000/cart/increase-quantity", {
+        const response = await fetch("https://novbahaar-backend.onrender.com/cart/increase-quantity", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -119,7 +119,7 @@ const CartComponent = () => {
 
         try {
 
-            const response = await fetch("http://localhost:4000/cart/remove-item", {
+            const response = await fetch("https://novbahaar-backend.onrender.com/cart/remove-item", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",
