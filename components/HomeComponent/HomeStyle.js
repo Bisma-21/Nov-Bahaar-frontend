@@ -9,6 +9,7 @@ const OuterContainer = styled.div`
   /* position: absolute;
   top: 32%;
   z-index: 0.3; */
+  min-height: calc(100vh - 265px);
 `;
 
 const Container = styled.div`
@@ -19,6 +20,12 @@ const Container = styled.div`
   justify-content: center;
 `;
 
+const LoadingContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
 const CardContainer = styled.div`
   /* border: 2px solid blue; */
   /* padding: 10px; */
@@ -113,4 +120,5 @@ export {
   DetailBody,
   Rating,
   Price,
+  LoadingContainer,
 };

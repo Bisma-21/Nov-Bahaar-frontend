@@ -480,6 +480,9 @@ const ButtonContainer = styled.div`
     border-radius: 3px;
     cursor: pointer;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 const PaymentDiv = styled.div`

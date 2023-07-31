@@ -12,8 +12,8 @@ const CircleDiv = styled.div`
       transform: rotate(360deg);
     }
   }
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
 `;
 export { CircleDiv };

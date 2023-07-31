@@ -260,6 +260,9 @@ const AddToCartDiv = styled.div`
     border: none;
     margin-right: 0px;
     font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* border: 1px solid red; */
   }
   :hover {
