@@ -6,6 +6,7 @@ const OuterContainer = styled.div`
   /* position: relative;
   bottom: 0%; */
   width: 100%;
+  margin-top: auto;
 `;
 const Body = styled.div`
   /* border: 5px solid #f5f1ec; */

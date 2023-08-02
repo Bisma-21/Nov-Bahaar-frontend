@@ -1,6 +1,8 @@
 import styled from "styled-components";
 const OuterContainer = styled.div`
   width: 100%;
+  position: absolute;
+  bottom: 0;
 `;
 const Body = styled.div`
   /* display: grid;
@@ -91,9 +93,10 @@ const InnerContainer = styled.div`
 `;
 const AppLink = styled.div`
   /* border: 1px solid yellowgreen; */
-  a {
+  p {
     color: #007aff;
     font-weight: bolder;
+    cursor: pointer;
     /* font-family: bolder; */
     /* border: none;; */
     margin-right: 5px;
