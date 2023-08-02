@@ -14,8 +14,8 @@ const Index = () => {
     <>
       <NavbarComponent />
       <TitleComponent />
-      {Object.keys(selector).length ? <HomeComponent /> : <LockComponent />}
-
+      {/* {Object.keys(selector).length ? <HomeComponent /> : <LockComponent />} */}
+<HomeComponent/>
       {/* </NavbarComponent> */}
 
       
