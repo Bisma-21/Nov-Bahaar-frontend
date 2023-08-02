@@ -100,6 +100,11 @@ const SubmitContainer = styled.div`
   /* border: 1.5px solid red; */
   width: 80%;
   /* margin-left: 150px; */
+  .loader{
+    // background-color:red
+    border-color:white;
+    border-top-color: transparent;
+  }
   .submit-button {
     /* width: 40px; */
     height: 2.3rem;

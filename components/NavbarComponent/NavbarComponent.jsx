@@ -70,18 +70,18 @@ const NavbarComponent = (props) => {
                     <ImageDiv>
                         <img src="/logo.png" alt="" onClick={homeHandler} />
                     </ImageDiv>
-                    <BsSearch className="icon" />
+                    {/* <BsSearch className="icon" />
                     <FaInstagram className="icon" />
                     <GrFacebookOption className="icon" />
-                    <BsPinterest className="icon" />
+                    <BsPinterest className="icon" /> */}
                 </LeftDiv>
                 <MiddleDiv>
-                    <Label>HOME</Label>
+                    {/* <Label>HOME</Label>
                     <Label>DAILY LOOKS</Label>
                     <Label>SUMMER CAPSULE</Label>
                     <Label>SPRING/SUMMER FASHION</Label>
                     <Label>TRY-ON HAULS</Label>
-                    <Label>BEAUTY</Label>
+                    <Label>BEAUTY</Label> */}
                 </MiddleDiv>
                 <RightDiv>
 

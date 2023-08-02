@@ -23,6 +23,7 @@ import { toast } from "react-toastify"
 import { useRouter } from "next/router"
 import { updateCartOnOrderCreateAction } from "../../store/action/cartAction"
 import ProtectRouteComponent from "../ProtectRouteComponent/ProtectRouteComponent"
+import LoaderComponent from "../Commons/LoaderComponent/LoaderComponent"
 // import OrderSuccessModal from "../AllOrdersComponent/OrderSuccessfulModal/OrderSuccessfulModalComponent"
 const OrderComponent = (props) => {
     const [name, setName] = useState("")
@@ -32,7 +33,7 @@ const OrderComponent = (props) => {
     const [seletedCountry, setSeletedCountry] = useState("")
     const [selectedUpi, setSelectedUpi] = useState("")
     const [paymentMethod, setPaymentMethod] = useState(false)
-
+    const[loader,setLoader] = useState(false)
     const router = useRouter()
     const dispatch = useDispatch()
     let onlinepayment = ["GPAY", "PHONEPE", "PAYTM", "WALLET", "CARD"]
@@ -230,7 +231,7 @@ const OrderComponent = (props) => {
                                     </OnlineContainer>}
                                 </PaymentDiv>
                                 <ButtonContainer>
-                                    <ButtonComponent title="Create Order" className="order-btn" click={createOrderHandler} />
+                                    <ButtonComponent title={loader?<LoaderComponent className="loader"/> :"Create Order"} className="order-btn" click={createOrderHandler} />
                                 </ButtonContainer>
                             </MethodContainer>
                         </PaymentContainer>

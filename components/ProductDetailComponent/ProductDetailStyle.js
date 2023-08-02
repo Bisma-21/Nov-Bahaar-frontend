@@ -253,6 +253,11 @@ const AddToCartDiv = styled.div`
   align-items: center;
   padding: 9px 0px;
   cursor: pointer;
+  .loader{
+    border-color:white;
+    border-top-color: transparent;
+    // padding:0
+  }
   .cart-btn {
     margin-right: 6px;
     width: 80px;
@@ -267,6 +272,7 @@ const AddToCartDiv = styled.div`
     border: 1px solid #c6bbac;
     .cart-btn {
       background-color: white;
+      cursor:pointer
     }
   }
 `;

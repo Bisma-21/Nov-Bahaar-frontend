@@ -3,6 +3,8 @@ import HomeComponent from "@/components/HomeComponent/HomeComponent";
 import LockComponent from "@/components/LockComponent/LockComponent";
 import NavbarComponent from "@/components/NavbarComponent/NavbarComponent";
 import TitleComponent from "@/components/TitleComponent/TitleComponent";
+import FooterComponent from "@/components/FooterComponent/FooterComponent";
+
 import { useSelector } from "react-redux";
 
 const Index = () => {
@@ -15,6 +17,9 @@ const Index = () => {
       {Object.keys(selector).length ? <HomeComponent /> : <LockComponent />}
 
       {/* </NavbarComponent> */}
+
+      
+      <FooterComponent/>
     </>
   );
 };

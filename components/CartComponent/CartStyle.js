@@ -12,6 +12,15 @@ const OuterContainer = styled.div`
   /* margin-top: 18px; */
   padding-top: 18px;
   height: 85.5vh;
+  .loader{
+    // background-color:red;
+    // margin-top:-150px
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    // width:40px;
+    // heigth:40px
+  }
 `;
 
 const Container = styled.div`
@@ -521,6 +530,11 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  .checkout-loader{
+    // background-color:red;
+    margin-left:120px;
+    // text-align:center
+  }
   .checkout-btn {
     border: 1px solid #e0e0e0;
     /* border: 1px solid red; */

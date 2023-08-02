@@ -108,6 +108,9 @@ const CartComponent = () => {
     }
     const checkoutHandler = () => {
         // console.log("checkoutHandler")
+        setLoading(true)
+        toast.success("checkout successfullt done!.")
+        setLoading(false)
         router.push("/order")
     }
     const homeHandler = () => {
@@ -150,7 +153,7 @@ const CartComponent = () => {
                             <Head>Cart Products</Head>
                         </Heading>
                 }
-                {loading ? <LoaderComponent /> : null}
+                {loading ? <LoaderComponent className="loader" /> : null}
                 {
                     !selector.cartDetails || !selector.cartDetails?.products?.length && !loading
                         ?
@@ -245,7 +248,8 @@ const CartComponent = () => {
                                             <GrandTotalPrice>₹{grandTotal}</GrandTotalPrice>
                                         </GrandTotalContainer>
                                         <ButtonContainer>
-                                            <ButtonComponent title="Checkout" className="checkout-btn" click={checkoutHandler} />
+
+                                            <ButtonComponent title={loading? <LoaderComponent className="checkout-loader"/>:"Checkout"} className="checkout-btn" click={checkoutHandler} />
                                             {/* <ButtonComponent title="Proceed" className="proceed-btn" /> */}
                                         </ButtonContainer>
                                     </DeliveryBody>

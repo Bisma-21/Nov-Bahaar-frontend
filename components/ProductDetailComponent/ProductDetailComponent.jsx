@@ -26,6 +26,7 @@ import { AiTwotoneHeart } from "react-icons/ai"
 import { AiOutlineStar, AiFillStar } from "react-icons/ai"
 import { getAllReviewOfAProductAction, createReviewOfAProductAction } from "../../store/action/reviewAction"
 import SmallFooterComponent from "../SmallFooterComponent/SmallFooterComponent"
+import LoaderComponent from "../Commons/LoaderComponent/LoaderComponent"
 
 const ProductDetailComponent = (props) => {
     // console.log("propssssssss<<<<>>>>", props)
@@ -35,6 +36,7 @@ const ProductDetailComponent = (props) => {
     // const [allReviews, setAllReviews] = useState([])
     const [input, setInput] = useState("")
     const [selectedRating, setSelectedRating] = useState(0);
+    const [loader,setLoader] = useState(false)
     const selector = useSelector((state) => state.products.productDetails)
     const userCart = useSelector((state) => state.cart.cartDetails)
     const whishlistSelector = useSelector((state) => state.whishlist)
@@ -90,6 +92,7 @@ const ProductDetailComponent = (props) => {
         try {
             // console.log("inside  addToCartHandler ", users)
             // console.log("inside  addToCartHandler ", users.token)
+            setLoader(true)
             if (!Object.keys(users).length) {
                 return router.push("/login")
             }
@@ -108,6 +111,7 @@ const ProductDetailComponent = (props) => {
             }
             // console.log("add to cart result====>", result)
             dispatch(saveProductToAddToCartAction(result.response))
+            setLoader(false)
             toast.success("Product added In Cart!.")
             router.push("/cart")
         } catch (error) {
@@ -324,8 +328,9 @@ const ProductDetailComponent = (props) => {
                                                     :
                                                     <AddToCartDiv>
                                                         <>
-                                                            <ButtonComponent title="Add to Cart" className="cart-btn" click={addToCartHandler.bind(this, e._id)} />
-                                                            <BsCartPlus />
+                                                        {loader ? <LoaderComponent className="loader"/>: <>  <ButtonComponent title="Add to Cart" className="cart-btn" click={addToCartHandler.bind(this, e._id)} />
+                                                            <BsCartPlus /></>}
+                                                           
                                                         </>
                                                     </AddToCartDiv>
                                             }

@@ -35,7 +35,7 @@ const SmallFooterComponent = () => {
                             </ThirdDiv>
                             <FourthDiv>
                                 <AppLink>
-                                    <a href="http://localhost:3000">NB.app</a>
+                                    <a href="https://nov-bahaar-frontend-7hsl.vercel.app">NB.app</a>
                                 </AppLink>
                             </FourthDiv>
                             <CoNameDiv>

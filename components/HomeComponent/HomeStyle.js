@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const OuterContainer = styled.div`
-  /* border: 4px solid green; */
+
+  /* border: 4px solid green;
   /* padding: 90px; */
   /* height: 600px; */
   /* width: 100vw; */
