@@ -18,6 +18,8 @@ import { toast } from "react-toastify"
 import { BiSearch } from "react-icons/bi"
 import { useState } from "react"
 import { saveProductDetailAction } from "../../store/action/productAction"
+import { DB_URI } from "@/utils/db_uri"
+
 const NavbarComponent = (props) => {
     // console.log("remove tokenn===", removeToken())
     const router = useRouter()
@@ -31,7 +33,6 @@ const NavbarComponent = (props) => {
     const selector = useSelector((state) => state.cart.cartDetails)
     // console.log("yyyyyy", selector)
     const user = useSelector((state) => state.users.userDetail)
-
     // console.log("55555555555", user)
     // const cartRedux = useSelector((state) => state.users.userDetail.userCart.products)
     // console.log("7777777777777", selector.products?.length)
@@ -75,7 +76,7 @@ const NavbarComponent = (props) => {
     const searchHandler = async () => {
         console.log("searchHandler===>", title)
 
-        const response = await fetch("http://localhost:4000/product/all?title=" + title, {
+        const response = await fetch(DB_URI + "product/all?title=" + title, {
             method: "GET",
             headers: {
                 "Content-type": "application/json"

@@ -11,6 +11,7 @@ import { saveWhishlistProductAction } from "../store/action/whishlistAction";
 
 import { useDispatch } from "react-redux";
 import { initializeApp } from "firebase/app";
+import { DB_URI } from "@/utils/db_uri";
 function App({ Component, pageProps }) {
   const dispatch = useDispatch();
   // console.log("vvvvvvvvvvvvvvvv", getToken());
@@ -31,7 +32,7 @@ function App({ Component, pageProps }) {
   useEffect(() => {
     const fun = async () => {
       if (getToken() != null) {
-        const response = await fetch("http://localhost:4000/user/auto-login", {
+        const response = await fetch(DB_URI + "user/auto-login", {
           method: "GET",
           headers: {
             "Content-type": "application/json",

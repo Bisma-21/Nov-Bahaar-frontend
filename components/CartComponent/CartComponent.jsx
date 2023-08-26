@@ -55,7 +55,7 @@ const CartComponent = () => {
         // console.log("inside the my cart use efffect")
         const fun = async () => {
             setLoading(true)
-            const response = await fetch("http://localhost:4000/cart/my", {
+            const response = await fetch("https://novbahaar-backend.onrender.com/cart/my", {
                 method: "GET",
                 headers: {
                     "Content-type": "application/json",
@@ -74,7 +74,7 @@ const CartComponent = () => {
         // setCount(data)
 
         // console.log("minus Handler", q, id)
-        const response = await fetch("http://localhost:4000/cart/decrease-quantity", {
+        const response = await fetch("https://novbahaar-backend.onrender.com/cart/decrease-quantity", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -93,7 +93,7 @@ const CartComponent = () => {
         const data = count + 1
         setCount(data)
         // console.log("plus Handler", data, id)
-        const response = await fetch("http://localhost:4000/cart/increase-quantity", {
+        const response = await fetch("https://novbahaar-backend.onrender.com/cart/increase-quantity", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -108,6 +108,9 @@ const CartComponent = () => {
     }
     const checkoutHandler = () => {
         // console.log("checkoutHandler")
+        setLoading(true)
+        toast.success("checkout successfullt done!.")
+        setLoading(false)
         router.push("/order")
     }
     const homeHandler = () => {
@@ -119,7 +122,7 @@ const CartComponent = () => {
 
         try {
 
-            const response = await fetch("http://localhost:4000/cart/remove-item", {
+            const response = await fetch("https://novbahaar-backend.onrender.com/cart/remove-item", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",
@@ -150,7 +153,7 @@ const CartComponent = () => {
                             <Head>Cart Products</Head>
                         </Heading>
                 }
-                {loading ? <LoaderComponent /> : null}
+                {loading ? <LoaderComponent className="loader" /> : null}
                 {
                     !selector.cartDetails || !selector.cartDetails?.products?.length && !loading
                         ?
@@ -245,13 +248,14 @@ const CartComponent = () => {
                                             <GrandTotalPrice>₹{grandTotal}</GrandTotalPrice>
                                         </GrandTotalContainer>
                                         <ButtonContainer>
-                                            <ButtonComponent title="Checkout" className="checkout-btn" click={checkoutHandler} />
+
+                                            <ButtonComponent title={loading ? <LoaderComponent className="checkout-loader" /> : "Checkout"} className="checkout-btn" click={checkoutHandler} />
                                             {/* <ButtonComponent title="Proceed" className="proceed-btn" /> */}
-                                        </ButtonContainer>
-                                    </DeliveryBody>
-                                </DeliveryContainer>
-                            </SubContainer>
-                        </Body>
+                                        </ButtonContainer >
+                                    </DeliveryBody >
+                                </DeliveryContainer >
+                            </SubContainer >
+                        </Body >
                 }
 
 

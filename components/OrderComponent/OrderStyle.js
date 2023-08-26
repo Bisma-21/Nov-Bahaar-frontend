@@ -472,7 +472,10 @@ const TotalNumber = styled.p`
 const ButtonContainer = styled.div`
   /* border: 2px solid green; */
   /* padding: 10px; */
-
+  .loader {
+    // background-color:red;
+    margin-left: 90px;
+  }
   .order-btn {
     width: 100%;
     height: 100%;
@@ -488,6 +491,9 @@ const ButtonContainer = styled.div`
       border-top-color: transparent;
       /* border-bottom: transparent; */
     }
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 const PaymentDiv = styled.div`

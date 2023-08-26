@@ -33,7 +33,7 @@ const ViewOrderDetailComponent = () => {
     const orderId = router.query['id']
     useEffect(() => {
         if (router.isReady) {
-            fetch(`http://localhost:4000/order/` + orderId, {
+            fetch(`https://novbahaar-backend.onrender.com/order/` + orderId, {
                 method: "GET",
                 headers: {
                     "Content-type": "application/json"

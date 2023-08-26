@@ -9,6 +9,7 @@ import { useRouter } from "next/router"
 import ButtonComponent from "@/components/Commons/ButtonComponent/ButtonComponent";
 import axios from 'axios';
 import { useState } from "react";
+import { DB_URI } from "@/utils/db_uri";
 const PaymentModalComponent = (props) => {
     let { closeModal, name } = props
     const router = useRouter()
@@ -39,7 +40,7 @@ const PaymentModalComponent = (props) => {
     const handlePayment = async () => {
         try {
             console.log("inside handle payment")
-            const response = await fetch("http://localhost:4000/order/create-payment", {
+            const response = await fetch(DB_URI + "order/create-payment", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"

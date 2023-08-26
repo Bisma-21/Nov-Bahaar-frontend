@@ -106,7 +106,7 @@ const Label = styled.p`
   cursor: pointer;
   :hover {
     color: #c6bbac;
-    /* text-decoration: underline; */
+    text-decoration: underline;
   }
 `;
 

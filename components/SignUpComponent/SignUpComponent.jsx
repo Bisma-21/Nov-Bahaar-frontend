@@ -26,6 +26,7 @@ import { saveUserDetails } from "../../store/action/userAction"
 import { toast } from "react-toastify"
 import LoaderComponent from "../Commons/LoaderComponent/LoaderComponent"
 import { firebaseGoogleSignIn } from "../../utils/firebase"
+import { DB_URI } from "@/utils/db_uri"
 const SignUpComponent = () => {
     // console.log("tokennnn====", getToken())
     const [email, setEmail] = useState("")
@@ -50,7 +51,7 @@ const SignUpComponent = () => {
         setLoad(true)
         console.log("inside the login  handler", email, password, name)
         const value = { email, password, name }
-        const response = await fetch("http://localhost:4000/user/signup", {
+        const response = await fetch("https://novbahaar-backend.onrender.com/user/signup", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
@@ -78,7 +79,7 @@ const SignUpComponent = () => {
     }
     const googleHandler = async () => {
         const tokenId = await firebaseGoogleSignIn()
-        const response = await fetch("http://localhost:4000/user/google-login", {
+        const response = await fetch(DB_URI + "user/google-login", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",

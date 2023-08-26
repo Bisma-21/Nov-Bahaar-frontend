@@ -23,10 +23,12 @@ import { useDispatch } from "react-redux"
 import { saveUserDetails } from "../../store/action/userAction"
 import { toast } from "react-toastify"
 import { useRouter } from "next/router"
+import LoaderComponent from "../Commons/LoaderComponent/LoaderComponent"
 const LoginComponent = () => {
     // console.log("tokennnn====", getToken())
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [loader, setLoader] = useState(false)
     const dispatch = useDispatch()
     const router = useRouter()
     const emailHandler = async (e) => {
@@ -39,28 +41,34 @@ const LoginComponent = () => {
         setPassword(e.target.value)
     }
     const loginHandler = async () => {
-        console.log("inside the login  handler", email, password)
-        const value = { email, password }
-        const response = await fetch("http://localhost:4000/user/login", {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json",
-            },
-            body: JSON.stringify(value)
-        })
-        const result = await response.json()
-        if (response.status >= 400) {
-            toast.error("Something Went Wrong!.")
-        }
-        const token = result?.response?.token
-        console.log("xxxxxxxxxxxxxxxxx", token)
-        setToken(token)
-        // localStorage.setItem("ecommerceLoginToken", token)
-        console.log("resulttttt==", result.response)
-        dispatch(saveUserDetails(result.response))
-        if (response.status == 200) {
-            toast.success("Successfully Log-in!.")
-            router.push("/home")
+        try {
+            setLoader(true)
+            console.log("inside the login  handler", email, password)
+            const value = { email, password }
+            const response = await fetch("https://novbahaar-backend.onrender.com/user/login", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json",
+                },
+                body: JSON.stringify(value)
+            })
+            const result = await response.json()
+            if (response.status >= 400) {
+                toast.error("Something Went Wrong!.")
+            }
+            const token = result?.response?.token
+            console.log("xxxxxxxxxxxxxxxxx", token)
+            setToken(token)
+            // localStorage.setItem("ecommerceLoginToken", token)
+            console.log("resulttttt==", result.response)
+            dispatch(saveUserDetails(result.response))
+            if (response.status == 200) {
+                toast.success("Successfully Log-in!.")
+                router.push("/home")
+                setLoader(false)
+            }
+        } catch (error) {
+            console.log(error)
         }
     }
     return (
@@ -93,7 +101,7 @@ const LoginComponent = () => {
                                 <Label> Remember me</Label>
                             </RightDiv>
                             <LeftDiv>
-                                {/* <Link>Forget Password?</Link> */}
+                                <Link>Forget Password?</Link>
                             </LeftDiv>
                         </DivContainer>
                         <LowerContainer>

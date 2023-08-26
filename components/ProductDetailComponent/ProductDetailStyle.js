@@ -256,11 +256,9 @@ const AddToCartDiv = styled.div`
   padding: 9px 0px;
   cursor: pointer;
   .loader {
-    /* color: red; */
-    /* border: 3px solid #fff;   */
-    /* border-color: red; */
-    /* background-color: blue; */
-    /* background-color: white; */
+    border-color: white;
+    border-top-color: transparent;
+    // padding:0
   }
   .cart-btn {
     margin-right: 6px;
@@ -269,6 +267,9 @@ const AddToCartDiv = styled.div`
     border: none;
     margin-right: 0px;
     font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* border: 1px solid red; */
   }
   :hover {
@@ -277,9 +278,6 @@ const AddToCartDiv = styled.div`
     .cart-btn {
       background-color: white;
       cursor: pointer;
-    }
-    .loader {
-      color: red;
     }
   }
 `;
